@@ -1,0 +1,34 @@
+<div type="{{lineType}}"
+		highlight="{{highlightAttributeRepresentation}}"
+		class="line {{lineClassAttributeRepresentation}}"
+		id="line{{lineNumber}}"
+		nickname-type="{{nicknameType}}">
+
+{{#isEncrypted}}
+	{{{encryptedMessageLockTemplate}}}
+{{/isEncrypted}}
+
+	<span class="sender"
+			ondblclick="Textual.nicknameDoubleClicked()"
+			oncontextmenu="Textual.openStandardNicknameContextualMenu()"
+			type="{{nicknameType}}"
+			nick="{{nickname}}"
+			{{#nicknameColorHashingEnabled}}
+				colornumber="{{nicknameColorNumber}}"
+			{{/nicknameColorHashingEnabled}}>
+		{{nickname}}
+	</span>
+
+	<span class="message" type="{{lineType}}">
+		{{{formattedMessage}}}
+
+		{{#inlineMediaAvailable}}
+			{{#inlineMediaArray}}
+				<a href="{{{anchorLink}}}" onclick="return Textual.toggleInlineImage('{{anchorInlineImageUniqueID}}', true)"><img src="{{{imageURL
+}}}" class="inlineimage" id="inlineImage-{{anchorInlineImageUniqueID}}" style="display: none; max-width: {{preferredMaximumWidth}}px;" title="Hide image by shift clicking." /></a>
+			{{/inlineMediaArray}}
+		{{/inlineMediaAvailable}}
+	</span>
+
+	<span class="time">{{formattedTimestamp}}</span>
+</div>
