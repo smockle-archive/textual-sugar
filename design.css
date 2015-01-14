@@ -2,208 +2,209 @@
 
 /* Basic Body Structure */
 body {
-    background: #fff;
-    color: #545454;
-    font-family: 'Lucida Grande';
-    font-size: 13px;
-    line-height: 1.4;
-    margin: 0;
-    overflow-x: hidden;
-    word-wrap: break-word;
+  background: #fff;
+  color: #545454;
+  font-family: 'Lucida Grande';
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  overflow-x: hidden;
+  word-wrap: break-word;
 }
 
 a {
-    border-bottom: dotted 1px #8cb3ff;
-    color: #8cb3ff;
-    text-decoration: none;
+  border-bottom: dotted 1px #8cb3ff;
+  color: #8cb3ff;
+  text-decoration: none;
 }
 
 a:hover {
-    border: none;
-    border-bottom: solid 1px #8cb3ff;
+  border: none;
+  border-bottom: solid 1px #8cb3ff;
 }
 
 #body_home {
-    bottom: 0;
-    left: 0;
-    padding: 2em 0 4px;
-    position: absolute;
-    right: 0;
-    top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2em 0 4px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 body[type*=server] #body_home {
-    padding: 2px 0;
+  padding: 2px 0;
 }
 
 .message,
 .sender,
 .time {
-    padding: 6px 8px 5px;
+  padding: 6px 8px 5px;
 }
 
 .message {
-    max-width: 90%;
-    width: 100%;
+  max-width: 90%;
+  width: 100%;
 }
 
 .sender,
 .time {
-    background: white;
+  background: white;
 }
 
 .sender {
-    font-weight: 400;
-    overflow: hidden;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 10em;
+  font-weight: 400;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 10em;
 }
 
 body[type*=server] .sender { display: none; }
 
 .time {
-    color: #888;
-    font-size: 0.8em;
-    line-height: 1.8;
-    white-space: nowrap;
+  color: #888;
+  font-size: 0.8em;
+  line-height: 1.8;
+  white-space: nowrap;
 }
 
 .line {
-    display: -webkit-flex;
-    -webkit-flex-flow: row;
+  display: -webkit-flex;
+  -webkit-flex-flow: row;
 }
 
 .line[nickname-type*=myself] .message,
 .line[nickname-type*=myself] .sender,
 .line[nickname-type*=myself] .time {
-    background: #e1eaf4;
+  background: #e1eaf4;
 }
 
 .line[type*=action] .message,
 .line[type*=action] .sender {
-    background: none;
-    font-style: italic;
+  background: none;
+  font-style: italic;
 }
 
 .line[type*=action] .sender {
-    padding-right: 2px;
+  padding-right: 2px;
 }
 
 body[type*=channel] .event .message {
-    color: #666;
+  color: #666;
 }
 
 .event .message:before {
-    content: '» ';
+  content: '» ';
 }
 
 body[type*=server] .event .message {
-    color: #999;
-    font-size: inherit;
-    padding-left: 1em;
-    padding-right: 2em;
+  color: #999;
+  font-size: inherit;
+  padding-left: 1em;
+  padding-right: 2em;
 }
 
 body[type*=server] .event .message:before {
-    content: '';
+  content: '';
 }
 
 .event .sender {
-    background: inherit;
+  background: inherit;
 }
 
 .text[highlight*=true],
 .text[highlight*=true] .time {
-    color: #fff;
+  color: #fff;
 }
 
-.text[highlight*=true] {
-    border-left: none;
-    border-right: none;
-    outline: none;
-}
-
-.text[highlight*=true] + .text[highlight*=true] {
-    border-top: none;
-}
-
-.text[highlight*=true] .message,
 .text[highlight*=true] .sender,
+.text[highlight*=true] .message,
 .text[highlight*=true] .time {
-    background-color: #fef7e5;
+  background-color: #e1eaf4;
+}
+
+body [type*=notice] .sender,
+body [type*=notice] .message,
+body [type*=notice] .time {
+  background-color: #fef7e5;
+}
+
+body [type*=notice] .sender {
+  border-left: 4px solid #f5c24f;
 }
 
 .text[highlight*=true] .message {
-    color: #545454;
+  color: #545454;
 }
 
 .znc-playback-end {
-    border-bottom: 1px dashed #9f9f9f;
+  border-bottom: 1px dashed #9f9f9f;
 }
 
 .znc-playback-start {
-    border-top: 1px dashed #9f9f9f;
+  border-top: 1px dashed #9f9f9f;
 }
 
 #mark {
-    border-bottom: 1px dotted #9f9f9f;
-    margin: 1px 0;
-    -webkit-transition: 0.2s linear;
+  border-bottom: 1px dotted #9f9f9f;
+  margin: 1px 0;
+  -webkit-transition: 0.2s linear;
 }
 
 /* Loading Screen */
 body div#loading_screen {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -11px;
-    margin-left: -150px;
-    width: 300px;
-    height: 21px;
-    font-size: 18px;
-    background: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #545454;
-    padding: 5px;
-    padding-left: 10px;
-    opacity: 1; /* Set by JavaScript */
-    -webkit-transition: opacity 0.8s linear;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -11px;
+  margin-left: -150px;
+  width: 300px;
+  height: 21px;
+  font-size: 18px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #545454;
+  padding: 5px;
+  padding-left: 10px;
+  opacity: 1; /* Set by JavaScript */
+  -webkit-transition: opacity 0.8s linear;
 }
 
 /* Topic Bar */
 #topic_bar {
-    background: #f5f5f5;
-    border-bottom: 1px solid #ccc;
-    box-shadow: none;
-    color: #545454;
-    font-weight: normal;
-    left: 0;
-    opacity: 0.9 !important; /* Overrides JS opacity. */
-    padding: 4px 12px 2px;
-    position: fixed;
-    right: 0;
-    text-align: center;
-    top: 0;
-    z-index: 2;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+  box-shadow: none;
+  color: #545454;
+  font-size: 0.8em;
+  font-weight: normal;
+  left: 0;
+  line-height: 1.8;
+  opacity: 1 !important; /* Overrides JS opacity. */
+  padding: 4px 12px 2px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
 }
 
 /* Images */
 a img {
-    border: 0;
+  border: 0;
 }
 
 a img:hover {
-    outline: 2px solid #284e84;
+  outline: 2px solid #284e84;
 }
 
 img {
-    display: block;
-    margin: 15px 15px 12px 0;
-    max-height: 40%;
-    max-width: 95%;
+  display: block;
+  margin: 15px 15px 12px 0;
+  max-height: 40%;
+  max-width: 95%;
 }
 
 /* Nickname Colors */
@@ -215,6 +216,10 @@ body .inline_nickname {
   background: #f5f5f5;
   border: 1px solid #d0d0d0;
   border-radius: 3px;
+}
+
+body .line {
+  border-top:1px solid #efefef;
 }
 
 body .text .sender[type*=myself] { color: #ff8c00; }
