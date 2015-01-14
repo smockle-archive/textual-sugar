@@ -4,7 +4,7 @@ Sugar Textual Style
 Sugar is a light theme for the Textual IRC client. It looks nice. It works well
 with Textual 5. It's based heavily on [Ryan Grove's Sulaco Theme](https://github.com/rgrove/textual-sulaco).
 
-![Screenshot](http://pie.gd/i/141030x3xzz.png)
+![Screenshot](https://dl.dropboxusercontent.com/u/45326422/textual-sugar.png)
 
 ## Features
 
